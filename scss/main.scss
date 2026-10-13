@@ -17,4 +17,91 @@ $white: hsl(0, 0%, 100%);
 
 body {
     font-family: $font;
+    font-size: 15px;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: $white;
+    padding: 3.5rem 2rem;
+    color: $grey-400;
+    grid-template-rows: 1fr auto;
 }
+
+.img {
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
+span {
+    display: block;
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+
+}
+
+.header {
+    text-align: center;
+    color: $grey-500;
+    font-size: 1.5rem;
+    line-height: 1.4;
+
+    &__thin {
+        font-weight: 200;
+    }
+    &__bold {
+        font-weight: 600;
+    }
+
+    @include tablet {
+        font-size: 2.5rem
+    }
+}
+
+.description {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.cards {
+    list-style: none;
+    margin-top: 32px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    border-top: 5px solid;
+    padding: 1.5em;
+    gap: 2rem;
+    box-shadow: 0px 20px 30px -15px hsla(0, 0%, 0%, 0.30);
+    margin-bottom: 2rem;
+
+    &__title {
+        color: $grey-500;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    &__description {
+        line-height: 1.6;
+    }
+
+    &__image {
+        align-self: flex-end;
+        margin-top: 2rem;
+    }
+}
+li:nth-child(1) .card { border-color: $cyan;}
+li:nth-child(2) .card { border-color: $red;}
+li:nth-child(3) .card { border-color: $orange;}
+li:nth-child(4) .card{ border-color: $blue;}
+
+
+
+
