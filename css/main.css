@@ -16,6 +16,10 @@ body {
   grid-template-rows: 1fr auto;
 }
 
+main {
+  width: 100%;
+}
+
 .img {
   display: block;
   width: 64px;
@@ -41,6 +45,7 @@ span {
 @media (min-width: 768px) {
   .header {
     font-size: 2.5rem;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -48,10 +53,29 @@ span {
   text-align: center;
   margin-top: 16px;
 }
+@media (min-width: 768px) {
+  .description {
+    max-width: 35em;
+    margin-inline: auto;
+    line-height: 1.4;
+    font-size: 16.5px;
+  }
+}
 
 .cards {
   list-style: none;
   margin-top: 32px;
+}
+@media (min-width: 768px) {
+  .cards {
+    margin-top: 4.5rem;
+    margin-inline: auto;
+    display: grid;
+    gap: 1.5rem;
+    max-width: 69rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "card-1 card-2 card-4" "card-1 card-3 card-4";
+  }
 }
 
 .card {
@@ -59,14 +83,19 @@ span {
   flex-direction: column;
   border-radius: 6px;
   border-top: 5px solid;
-  padding: 1.5em;
-  gap: 2rem;
+  padding: 2rem;
+  gap: 0.75rem;
   box-shadow: 0px 20px 30px -15px hsla(0, 0%, 0%, 0.3);
   margin-bottom: 2rem;
 }
+@media (min-width: 768px) {
+  .card {
+    margin-bottom: 0;
+  }
+}
 .card__title {
   color: hsl(234, 12%, 34%);
-  font-size: 1.25rem;
+  font-size: 1.25em;
   font-weight: 600;
 }
 .card__description {
@@ -74,7 +103,12 @@ span {
 }
 .card__image {
   align-self: flex-end;
-  margin-top: 2rem;
+  margin: 1.5rem 0 0;
+}
+@media (min-width: 768px) {
+  .card__image {
+    margin-top: 0;
+  }
 }
 
 li:nth-child(1) .card {
@@ -91,4 +125,22 @@ li:nth-child(3) .card {
 
 li:nth-child(4) .card {
   border-color: hsl(212, 86%, 64%);
+}
+
+li:nth-child(1) {
+  grid-area: card-1;
+  align-self: center;
+}
+
+li:nth-child(2) {
+  grid-area: card-2;
+}
+
+li:nth-child(3) {
+  grid-area: card-3;
+}
+
+li:nth-child(4) {
+  grid-area: card-4;
+  align-self: center;
 }/*# sourceMappingURL=main.css.map */
